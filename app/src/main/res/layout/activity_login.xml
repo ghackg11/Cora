@@ -1,0 +1,157 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorPrimaryDark"
+    android:scrollbarSize="6dp"
+    tools:context=".LoginActivity">
+
+    <ImageView
+        android:id="@+id/logo_login_activity"
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        android:layout_marginTop="16dp"
+        android:transitionName="logo_image"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/logo" />
+
+    <TextView
+        android:id="@+id/text"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/bangers"
+        android:text="HEY THERE!"
+        android:textAlignment="center"
+        android:textColor="#eeeeee"
+        android:textSize="70sp"
+        android:transitionName="text_transition"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/logo_login_activity" />
+
+    <TextView
+        android:id="@+id/text2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/bangers"
+        android:text="Good to see you again"
+        android:textAlignment="center"
+        android:textColor="#eeeeee"
+        android:textSize="20sp"
+        android:transitionName="text2_transition"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/text" />
+
+    <LinearLayout
+        android:id="@+id/linearLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintTop_toBottomOf="@+id/text2">
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/email_layout"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="16dp"
+            android:layout_marginLeft="16dp"
+            android:layout_marginTop="32dp"
+            android:layout_marginBottom="4dp"
+            android:hint="@string/email_id"
+            app:boxStrokeColor="#fff"
+            app:hintTextColor="#fff"
+            app:placeholderTextColor="#fff"
+            app:startIconDrawable="@drawable/email"
+            app:endIconMode="clear_text"
+            app:errorEnabled="true">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textColor="#eee"
+                android:textColorHighlight="#eee"
+                android:textColorHint="#eee"
+                android:textColorLink="#eee"
+                android:transitionName="email_transition" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/password_layout"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="16dp"
+            android:layout_marginLeft="16dp"
+            android:layout_marginBottom="8dp"
+            android:hint="Password"
+            app:boxStrokeColor="#fff"
+            app:endIconMode="password_toggle"
+            app:hintTextColor="#fff"
+            app:passwordToggleEnabled="true"
+            app:startIconDrawable="@drawable/lock"
+            app:errorEnabled="true">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="textPassword"
+                android:textColor="#eee"
+                android:textColorHighlight="#eee"
+                android:textColorHint="#eee"
+                android:textColorLink="#eee"
+                android:transitionName="password_transition" />
+
+            <Button
+                android:id="@+id/button2"
+                android:layout_width="match_parent"
+                android:layout_height="33dp"
+                android:background="@android:color/transparent"
+                android:text="Forgot Password?"
+                android:textAlignment="textEnd"
+                android:textAllCaps="false"
+                android:textColor="#eee"
+                android:textSize="10dp" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <Button
+            android:id="@+id/go_button_login"
+            style="@android:style/Widget.Button"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="40dp"
+            android:layout_marginRight="40dp"
+            android:layout_marginBottom="0dp"
+            android:background="@drawable/transparent_border"
+            android:fontFamily="sans-serif-medium"
+            android:onClick="login"
+            android:text="Go"
+            android:textColor="#000"
+            android:transitionName="go_Button_transition" />
+
+
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@android:color/transparent"
+        android:text="new user? Sign in"
+        android:textColor="#eee"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout"
+        android:onClick="goToSignUpPage"/>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
